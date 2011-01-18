@@ -17,7 +17,7 @@ namespace Squire.Framework
         }
 
         [TestCleanup]
-        private void Cleanup()
+        public void Cleanup()
         {
             AfterEachTest();
         }
