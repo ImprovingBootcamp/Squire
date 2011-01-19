@@ -46,7 +46,7 @@ namespace Squire.Framework
             string[] actual = Split_A_String_Into_An_Array(input, divider);
 
             // Assert
-            Assert.AreEqual(input.Split(divider), actual);
+            CollectionAssert.AreEqual(input.Split(divider), actual);
         }
 
         [TestMethod]
