@@ -12,6 +12,7 @@ namespace Squire.Framework
         [TestInitialize]
         public void Initialize()
         {
+            container = new WindsorContainer();
             RegisterComponents(container);
             BeforeEachTest();
         }

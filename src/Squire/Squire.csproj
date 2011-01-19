@@ -54,7 +54,10 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleKihon.cs" />
+    <Compile Include="Framework\Abstractions\IConsoleWrapper.cs" />
     <Compile Include="Framework\BaseKihon.cs" />
+    <Compile Include="Framework\ConsoleKihonStructure.cs" />
     <Compile Include="Framework\StringKihonStructure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringKihon.cs" />
