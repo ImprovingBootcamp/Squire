@@ -38,7 +38,7 @@ namespace Squire.Framework
             WriteLine_FooBar_To_The_Console(console);
 
             // Assert
-            console.AssertWasCalled(c => c.Write("FooBar"));
+            console.AssertWasCalled(c => c.WriteLine("FooBar"));
         }
 
         [TestMethod]
