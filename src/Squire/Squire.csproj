@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleKihon.cs" />
+    <Compile Include="ControlStructureKihon.cs" />
     <Compile Include="Framework\Abstractions\IConsoleWrapper.cs" />
     <Compile Include="Framework\BaseKihon.cs" />
     <Compile Include="Framework\ConsoleKihonStructure.cs" />
