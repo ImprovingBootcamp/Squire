@@ -98,7 +98,7 @@ namespace Squire.Framework
             a.Stub(m => m.IsValid).Return(false).Repeat.Times(1);
 
             // Act
-            Call_Hit_On_a_Once_And_Continue_Until_IsValid_Is_False(a);
+            Call_Hit_On_a_Once_And_Loop_Until_IsValid_Is_False(a);
 
             // Assert
             a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(5));
@@ -108,7 +108,7 @@ namespace Squire.Framework
         protected abstract void Call_Hit_On_a_Once_For_Each_Member_Of_list(ITarget a, List<System.String> list);
         protected abstract void Call_Hit_On_a_While_a_IsValid_Is_True(ITarget a);
         protected abstract void n_Times_Call_Hit_On_a(int n, ITarget a);
-        protected abstract void Call_Hit_On_a_Once_And_Continue_Until_IsValid_Is_False(ITarget a);
+        protected abstract void Call_Hit_On_a_Once_And_Loop_Until_IsValid_Is_False(ITarget a);
 
     }
 }

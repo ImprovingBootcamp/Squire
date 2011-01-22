@@ -8,7 +8,10 @@ namespace Squire
     [TestClass]
     public class ControlStructureKihon : ControlStructuresKihonStructure
     {
-
+        /*
+         * This Kihon uses ITarget extensively.  It has a method called Hit() and
+         * a property called IsValid.  So "Call_Hit_On_a" means "a.Hit();"
+         */
         protected override void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(bool val, ITarget a, ITarget b)
         {
             throw new NotImplementedException();
@@ -29,7 +32,7 @@ namespace Squire
             throw new NotImplementedException();
         }
 
-        protected override void Call_Hit_On_a_Once_And_Continue_Until_IsValid_Is_False(ITarget a)
+        protected override void Call_Hit_On_a_Once_And_Loop_Until_IsValid_Is_False(ITarget a)
         {
             throw new NotImplementedException();
         }
