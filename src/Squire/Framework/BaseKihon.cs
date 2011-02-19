@@ -4,6 +4,7 @@ using Castle.Windsor;
 
 namespace Squire.Framework
 {
+
     [TestClass]
     public abstract class BaseKihon
     {
