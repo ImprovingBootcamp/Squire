@@ -30,22 +30,32 @@ namespace Squire
          */
         protected override string Select_All_Fields_And_Rows_From_Person()
         {
-            return "SELECT * FROM PERSON";
+            throw new NotImplementedException();
         }
 
         protected override string Select_All_Fields_From_Person_Joined_To_Address()
         {
-            return "SELECT * FROM PERSON JOIN ADDRESS ON PERSON.PERSONID = ADDRESS.PERSONID";
+            throw new NotImplementedException();
         }
 
         protected override string Select_FirstName_From_Person_Where_LastName_Equals_Rayburn()
         {
-            return "SELECT FIRSTNAME FROM PERSON WHERE LASTNAME='Rayburn'";
+            throw new NotImplementedException();
         }
 
         protected override string Select_All_Fields_From_Person_Left_Outer_Joined_To_Address()
         {
-            return "SELECT * FROM PERSON LEFT OUTER JOIN ADDRESS ON PERSON.PERSONID = ADDRESS.PERSONID";
+            throw new NotImplementedException();
+        }
+
+        protected override string Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override string Update_All_LastNames_Rayburn_To_Johnson_In_Person()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -9,11 +9,20 @@ namespace Squire.Framework
     [TestClass]
     public abstract class SqlKihonStructure : BaseDataKihon
     {
-        private static void ExecuteNonQuery(SQLiteConnection dbConn, string cmdText)
+        private int ExecuteScalarInt(string cmdText)
         {
-            using (SQLiteCommand sQLiteCommand1 = new SQLiteCommand(cmdText, dbConn))
+            using (SQLiteCommand cmd = new SQLiteCommand(cmdText, dbConn))
             {
-                sQLiteCommand1.ExecuteNonQuery();
+                object result = cmd.ExecuteScalar();
+                return Convert.ToInt32(result);
+            }
+        }
+
+        private int ExecuteNonQuery(string cmdText)
+        {
+            using (SQLiteCommand cmd = new SQLiteCommand(cmdText, dbConn))
+            {
+                return cmd.ExecuteNonQuery();
             }
         }
 
@@ -28,10 +37,10 @@ namespace Squire.Framework
 
         protected override void CreateTestData(SQLiteConnection dbConn)
         {
-            ExecuteNonQuery(dbConn, CreatePersonTable());
-            ExecuteNonQuery(dbConn, CreateAddressTable());
-            ExecuteNonQuery(dbConn, SamplePersons());
-            ExecuteNonQuery(dbConn, SampleAddress());
+            ExecuteNonQuery(CreatePersonTable());
+            ExecuteNonQuery(CreateAddressTable());
+            ExecuteNonQuery(SamplePersons());
+            ExecuteNonQuery(SampleAddress());
         }
 
         private string SamplePersons()
@@ -170,9 +179,49 @@ namespace Squire.Framework
             Assert.AreEqual(3, count);
         }
 
+        [TestMethod]
+        public void Actual_Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person()
+        {
+            // Arrange
+            int count = 0;
+
+            // Act
+            string cmdText = Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person();
+            var rowCount = ExecuteNonQuery(cmdText);
+
+            // Assert
+            Assert.AreEqual(1, rowCount);
+            Execute("SELECT * FROM PERSON WHERE FIRSTNAME='Mike' AND LASTNAME='Johnson' AND AGE=5",
+                r =>
+                {
+                    while (r.Read())
+                    {
+                        count += 1;
+                    }
+                });
+            Assert.AreEqual(1, count);
+        }
+
+        [TestMethod]
+        public void Actual_Update_All_LastNames_Rayburn_To_Johnson_In_Person()
+        {
+            // Arrange
+            int count = 0;
+
+            // Act
+            string cmdText = Update_All_LastNames_Rayburn_To_Johnson_In_Person();
+            var rowCount = ExecuteNonQuery(cmdText);
+
+            // Assert
+            Assert.AreEqual(2, rowCount);
+            Assert.AreEqual(2, ExecuteScalarInt("SELECT COUNT(*) FROM PERSON WHERE LASTNAME='Johnson'"));
+            Assert.AreEqual(0, ExecuteScalarInt("SELECT COUNT(*) FROM PERSON WHERE LASTNAME='Rayburn'"));
+        }
         protected abstract string Select_All_Fields_And_Rows_From_Person();
         protected abstract string Select_All_Fields_From_Person_Joined_To_Address();
         protected abstract string Select_FirstName_From_Person_Where_LastName_Equals_Rayburn();
         protected abstract string Select_All_Fields_From_Person_Left_Outer_Joined_To_Address();
+        protected abstract string Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person();
+        protected abstract string Update_All_LastNames_Rayburn_To_Johnson_In_Person();
     }
 }

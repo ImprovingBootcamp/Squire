@@ -6,6 +6,7 @@ build
 *.suo
 *.trx
 Logs
+TestResults
 TestResult.xml
 # This line keeps the db in check - comment it out to update the starting db
 data
