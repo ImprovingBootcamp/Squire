@@ -28,7 +28,7 @@ namespace Squire.Framework
         }
 
         [TestMethod]
-        public void Select_the_products_where_something_is_equal_to_2_from_list_test()
+        public void Filter_the_products_where_something_is_equal_to_2_from_list_test()
         {
             //arrange
             var product = new Product() { Something = 2 };
@@ -41,13 +41,35 @@ namespace Squire.Framework
 
 
             //act
-            var item = Select_the_products_where_something_is_equal_to_2_from_list(list);
+            var item = Filter_the_products_where_something_is_equal_to_2_from_list(list);
 
             //assert
             Assert.AreEqual(1, item.Count());
         }
 
-        protected abstract IEnumerable<Product> Select_the_products_where_something_is_equal_to_2_from_list(List<Product> list);
+        [TestMethod]
+        public void Order_the_list_by_the_something_property_test()
+        {
+            //arrange
+            var product = new Product() { Something = 2 };
+            var list = new List<Product>()
+                           {
+                               product,
+                               new Product(){Something = 1}
+                           };
+
+
+
+            //act
+            IEnumerable<Product> item = Order_the_list_by_the_something_property(list);
+
+            //assert
+            Assert.AreEqual(list[0], item.FirstOrDefault());
+            Assert.AreEqual(list[1], item.LastOrDefault());
+        }
+
+        protected abstract IEnumerable<Product> Order_the_list_by_the_something_property(List<Product> list);
+        protected abstract IEnumerable<Product> Filter_the_products_where_something_is_equal_to_2_from_list(List<Product> list);
         protected abstract IEnumerable<int> Select_the_Something_property_from_list(List<Product> list);
     }
 
