@@ -8,27 +8,29 @@ namespace Squire.Framework
     [TestClass]
     public abstract class LinqKihonStructure : BaseKihon
     {
-        internal List<Product> _list = new List<Product>
-                                           {
-                                               new Product {Something = 1}
-                                           };
-
         [TestMethod]
-        public void Select_a_property_from_a_list_of_objects_test()
+        public void Select_the_Something_property_from_list_test()
         {
             //arrange
+            var product = new Product() {Something = 1};
+            var list = new List<Product>()
+                           {
+                               product
+                           };
+
+
 
             //act
-            var item = Select_a_property_from_a_list_of_objects();
+            var item = Select_the_Something_property_from_list(list);
 
             //assert
-            Assert.AreEqual(_list.First() ,item.First());
+            Assert.AreEqual(product.Something ,item.SingleOrDefault());
         }
 
-        public abstract IEnumerable<int> Select_a_property_from_a_list_of_objects();
+        public abstract IEnumerable<int> Select_the_Something_property_from_list(List<Product> list);
     }
 
-    internal class Product
+    public class Product
     {
         public int Something { get; set; }
     }

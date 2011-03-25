@@ -9,9 +9,9 @@ namespace Squire
     [TestClass]
     public class LinqKihon : LinqKihonStructure
     {
-        public override IEnumerable<int> Select_a_single_property_from_an_object()
+        public override IEnumerable<int> Select_the_Something_property_from_list(List<Product> list)
         {
-            return _list.Select(x => x.Something);
+            return list.Select(x => x.Something);
         }
     }
 }
