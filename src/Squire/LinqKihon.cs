@@ -14,6 +14,11 @@ namespace Squire
             throw new NotImplementedException();
         }
 
+        protected override IEnumerable<Product> Order_the_list_by_the_something_property_descending(List<Product> list)
+        {
+            throw new NotImplementedException();
+        }
+
         protected override IEnumerable<Product> Order_the_list_by_the_something_property(List<Product> list)
         {
             throw new NotImplementedException();
