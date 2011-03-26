@@ -7,7 +7,7 @@ using Squire.Framework;
 namespace Squire
 {
     [TestClass]
-    public class LinqKihon : LinqKihonStructure
+    public class LinqKihon : LinqKihonBase
     {
         protected override IEnumerable<int> Select_the_Something_property_from_list(List<Product> list)
         {

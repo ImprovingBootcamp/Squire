@@ -5,7 +5,7 @@ using Squire.Framework;
 namespace Squire
 {
     [TestClass]
-    public class SqlKihon : SqlKihonStructure
+    public class SqlKihon : SqlKihonBase
     {
         /* Given SQL Tables defined as:
          * ----------------------------

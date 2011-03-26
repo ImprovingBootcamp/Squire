@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Squire
 {
     [TestClass]
-    public class ControlStructureKihon : ControlStructuresKihonStructure
+    public class ControlStructureKihon : ControlStructuresKihonBase
     {
         /*
          * This Kihon uses ITarget extensively.  It has a method called Hit() and

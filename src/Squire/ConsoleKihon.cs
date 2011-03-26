@@ -14,7 +14,7 @@ namespace Squire
      * do to one, you can do to the other.
      */
     [TestClass]
-    public class ConsoleKihon : ConsoleKihonStructure
+    public class ConsoleKihon : ConsoleKihonBase
     {
         protected override void Write_FooBar_To_The_Console(IConsoleWrapper console)
         {

@@ -8,7 +8,7 @@ using Squire.Framework;
 namespace Squire
 {
     [TestClass]
-    public class StringKihon : StringKihonStructure
+    public class StringKihon : StringKihonBase
     {
         protected override string Convert_To_Uppercase(string data)
         {
