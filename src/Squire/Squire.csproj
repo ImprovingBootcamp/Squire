@@ -70,11 +70,13 @@
     <Compile Include="Framework\NumbersKihonBase.cs" />
     <Compile Include="Framework\SqlKihonBase.cs" />
     <Compile Include="Framework\StringKihonBase.cs" />
+    <Compile Include="Framework\TypeConversionKihonBase.cs" />
     <Compile Include="LinqKihon.cs" />
     <Compile Include="NumbersKihon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlKihon.cs" />
     <Compile Include="StringKihon.cs" />
+    <Compile Include="TypeConversionKihon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
