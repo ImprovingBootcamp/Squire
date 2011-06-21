@@ -1,11 +1,12 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using NUnit.Framework;
 using Squire.Framework.Abstractions;
 using Rhino.Mocks;
 
 namespace Squire.Framework
 {
-    [TestClass]
+    [TestFixture]
     public abstract class ConsoleKihonBase : BaseKihon
     {
         private IConsoleWrapper console;
@@ -15,7 +16,7 @@ namespace Squire.Framework
             base.BeforeEachTest();
             console = MockRepository.GenerateMock<IConsoleWrapper>();
         }
-        [TestMethod]
+        [Test]
         public void Write_FooBar_To_The_Console()
         {
             // Arrange
@@ -28,7 +29,7 @@ namespace Squire.Framework
             console.AssertWasCalled(c => c.Write("FooBar"));
         }
 
-        [TestMethod]
+        [Test]
         public void WriteLine_FooBar_To_The_Console()
         {
             // Arrange
@@ -41,7 +42,7 @@ namespace Squire.Framework
             console.AssertWasCalled(c => c.WriteLine("FooBar"));
         }
 
-        [TestMethod]
+        [Test]
         public void Write_Foo_In_Blue_To_The_Console()
         {
             // Arrange
@@ -55,7 +56,7 @@ namespace Squire.Framework
             console.AssertWasCalled(c => c.Write("Foo"));
         }
 
-        [TestMethod]
+        [Test]
         public void Read_Line_From_Console_And_Return_Value()
         {
             // Arrange

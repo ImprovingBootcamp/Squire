@@ -1,12 +1,14 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Data.SQLite;
 using System.Text;
 using System.Data;
 
+using NUnit.Framework;
+
 namespace Squire.Framework
 {
-    [TestClass]
+    [TestFixture]
     public abstract class SqlKihonBase : BaseDataKihon
     {
         private int ExecuteScalarInt(string cmdText)
@@ -97,7 +99,7 @@ namespace Squire.Framework
             return sb.ToString();
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Select_All_Fields_And_Rows_From_Person()
         {
             // Arrange
@@ -118,7 +120,7 @@ namespace Squire.Framework
             Assert.AreEqual(3, count);
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Select_All_Fields_From_Person_Joined_To_Address()
         {
             // Arrange
@@ -139,7 +141,7 @@ namespace Squire.Framework
             Assert.AreEqual(1, count);
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Select_FirstName_From_Person_Where_LastName_Equals_Rayburn()
         {
             // Arrange
@@ -159,7 +161,7 @@ namespace Squire.Framework
             Assert.AreEqual(2, count);
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Select_All_Fields_From_Person_Left_Outer_Joined_To_Address()
         {
             // Arrange
@@ -179,7 +181,7 @@ namespace Squire.Framework
             Assert.AreEqual(3, count);
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person()
         {
             // Arrange
@@ -202,7 +204,7 @@ namespace Squire.Framework
             Assert.AreEqual(1, count);
         }
 
-        [TestMethod]
+        [Test]
         public void Actual_Update_All_LastNames_Rayburn_To_Johnson_In_Person()
         {
             // Arrange
@@ -217,6 +219,7 @@ namespace Squire.Framework
             Assert.AreEqual(2, ExecuteScalarInt("SELECT COUNT(*) FROM PERSON WHERE LASTNAME='Johnson'"));
             Assert.AreEqual(0, ExecuteScalarInt("SELECT COUNT(*) FROM PERSON WHERE LASTNAME='Rayburn'"));
         }
+        
         protected abstract string Select_All_Fields_And_Rows_From_Person();
         protected abstract string Select_All_Fields_From_Person_Joined_To_Address();
         protected abstract string Select_FirstName_From_Person_Where_LastName_Equals_Rayburn();

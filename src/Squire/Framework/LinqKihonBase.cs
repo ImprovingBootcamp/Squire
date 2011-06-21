@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Squire.Framework
 {
-    [TestClass]
+    [TestFixture]
     public abstract class LinqKihonBase : BaseKihon
     {
-        [TestMethod]
+        [Test]
         public void Select_the_Something_property_from_list_test()
         {
             //arrange
@@ -27,7 +27,7 @@ namespace Squire.Framework
             Assert.AreEqual(product.Something ,item.SingleOrDefault());
         }
 
-        [TestMethod]
+        [Test]
         public void Filter_the_products_where_something_is_equal_to_2_from_list_test()
         {
             //arrange
@@ -47,7 +47,7 @@ namespace Squire.Framework
             Assert.AreEqual(1, item.Count());
         }
 
-        [TestMethod]
+        [Test]
         public void Order_the_list_by_the_something_property_test()
         {
             //arrange
@@ -69,7 +69,7 @@ namespace Squire.Framework
         }
 
 
-        [TestMethod]
+        [Test]
         public void Order_the_list_by_the_something_property_descending_test()
         {
             //arrange

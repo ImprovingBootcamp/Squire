@@ -1,5 +1,6 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using NUnit.Framework;
 using Rhino.Mocks;
 using System.Collections.Generic;
 
@@ -11,10 +12,10 @@ namespace Squire.Framework
         bool IsValid { get; }
     }
 
-    [TestClass]
+    [TestFixture]
     public abstract class ControlStructuresKihonBase : BaseKihon
     {
-        [TestMethod]
+        [Test]
         public void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b_V1()
         {
             // Arrange
@@ -30,7 +31,7 @@ namespace Squire.Framework
             b.AssertWasNotCalled(t => t.Hit());
         }
 
-        [TestMethod]
+        [Test]
         public void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b_V2()
         {
             // Arrange
@@ -46,7 +47,7 @@ namespace Squire.Framework
             b.AssertWasCalled(t => t.Hit());
         }
 
-        [TestMethod]
+        [Test]
         public void Call_Hit_On_a_Once_For_Each_Member_Of_list()
         {
             // Arrange
@@ -60,7 +61,7 @@ namespace Squire.Framework
             a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(4));
         }
 
-        [TestMethod]
+        [Test]
         public void Call_Hit_On_a_While_a_IsValid_Is_True()
         {
             // Arrange
@@ -75,7 +76,7 @@ namespace Squire.Framework
             a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(4));
         }
 
-        [TestMethod]
+        [Test]
         public void n_Times_Call_Hit_On_a()
         {
             // Arrange
@@ -89,7 +90,7 @@ namespace Squire.Framework
             a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(n));
         }
 
-        [TestMethod]
+        [Test]
         public void Call_Hit_On_a_Once_And_Continue_Until_IsValid_Is_False()
         {
             // Arrange

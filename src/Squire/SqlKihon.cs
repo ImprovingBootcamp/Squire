@@ -1,10 +1,10 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Squire.Framework;
 
 namespace Squire
 {
-    [TestClass]
+    [TestFixture]
     public class SqlKihon : SqlKihonBase
     {
         /* Given SQL Tables defined as:

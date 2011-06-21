@@ -1,10 +1,10 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Squire.Framework;
 
 namespace Squire
 {
-    [TestClass]
+    [TestFixture]
     public class NumbersKihon : NumbersKihonBase
     {
         protected override int Return_The_Maximum_Value_Of_Int32()

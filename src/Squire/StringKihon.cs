@@ -2,12 +2,12 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Squire.Framework;
 
 namespace Squire
 {
-    [TestClass]
+    [TestFixture]
     public class StringKihon : StringKihonBase
     {
         protected override string Convert_To_Uppercase(string data)

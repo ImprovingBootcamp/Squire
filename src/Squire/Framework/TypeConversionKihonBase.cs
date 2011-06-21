@@ -1,11 +1,11 @@
 namespace Squire.Framework
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public abstract class TypeConversionKihonBase : BaseKihon
     {
-        [TestMethod]
+        [Test]
         public void Convert_String_To_Int()
         {
             // Arrange

@@ -1,12 +1,12 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Squire.Framework
 {
-    [TestClass]
+    [TestFixture]
     public abstract class StringKihonBase : BaseKihon
     {
-        [TestMethod]
+        [Test]
         public void Combine_Two_Strings()
         {
             // Arrange
@@ -20,7 +20,7 @@ namespace Squire.Framework
             Assert.AreEqual(a + b, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Combine_Parts_Of_A_Name()
         {
             // Arrange
@@ -35,7 +35,7 @@ namespace Squire.Framework
             Assert.AreEqual(string.Format("{0} {1} {2}",firstName,middleName,lastName), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Split_A_String_Into_An_Array()
         {
             // Arrange
@@ -49,7 +49,7 @@ namespace Squire.Framework
             CollectionAssert.AreEqual(input.Split(divider), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Join_An_Array_Into_A_String()
         {
             // Arrange
@@ -63,7 +63,7 @@ namespace Squire.Framework
             Assert.AreEqual(string.Join(divider,input), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Determine_The_Length_Of_A_String()
         {
             // Arrange
@@ -76,7 +76,7 @@ namespace Squire.Framework
             Assert.AreEqual(data.Length, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Remove_All_Leading_Whitespace()
         {
             // Arrange
@@ -89,7 +89,7 @@ namespace Squire.Framework
             Assert.AreEqual(data.TrimStart(), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Remove_All_Trailing_Whitespace()
         {
             // Arrange
@@ -102,7 +102,7 @@ namespace Squire.Framework
             Assert.AreEqual(data.TrimEnd(), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Convert_To_Uppercase()
         {
             // Arrange
@@ -115,7 +115,7 @@ namespace Squire.Framework
             Assert.AreEqual(data.ToUpper(), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Convert_To_Lowercase()
         {
             // Arrange
@@ -128,7 +128,7 @@ namespace Squire.Framework
             Assert.AreEqual(data.ToLower(), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Determine_The_Position_Of_a_In_b()
         {
             // Arrange
@@ -142,7 +142,7 @@ namespace Squire.Framework
             Assert.AreEqual(b.IndexOf(a), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Contains_b()
         {
             // Arrange
@@ -156,7 +156,7 @@ namespace Squire.Framework
             Assert.IsTrue(actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Starts_With_b()
         {
             // Arrange
@@ -170,7 +170,7 @@ namespace Squire.Framework
             Assert.IsTrue(actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_Is_a_Ends_With_b()
         {
             // Arrange
@@ -184,7 +184,7 @@ namespace Squire.Framework
             Assert.IsTrue(actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_The_Fourth_Through_Seventh_Characters_Of_Input()
         {
             // Arrange
