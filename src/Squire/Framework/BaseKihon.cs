@@ -1,16 +1,16 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Castle.Windsor;
+using NUnit.Framework;
 
 namespace Squire.Framework
 {
 
-    [TestClass]
+    [TestFixture]
     public abstract class BaseKihon
     {
         private IWindsorContainer container;
 
-        [TestInitialize]
+        [SetUp]
         public void Initialize()
         {
             container = new WindsorContainer();
@@ -18,7 +18,7 @@ namespace Squire.Framework
             BeforeEachTest();
         }
 
-        [TestCleanup]
+        [TearDown]
         public void Cleanup()
         {
             AfterEachTest();
