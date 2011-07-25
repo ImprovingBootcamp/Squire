@@ -18,7 +18,7 @@ namespace Squire.Framework
             BeforeEachTest();
         }
 
-        [Test]
+        [TearDown]
         public void Cleanup()
         {
             AfterEachTest();
