@@ -1,45 +1,45 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Squire.Framework;
 
 namespace Squire
 {
-    [TestClass]
+    [TestFixture]
     public class NumbersKihon : NumbersKihonBase
     {
         protected override int Return_The_Maximum_Value_Of_Int32()
         {
-            throw new NotImplementedException();
+            return int.MaxValue;
         }
 
         protected override int Return_The_Minimum_Value_Of_Int32()
         {
-            throw new NotImplementedException();
+            return int.MinValue;
         }
 
         protected override int Return_The_Remainder_Of_a_Divided_By_b(int a, int b)
         {
-            throw new NotImplementedException();
+            return a % b;
         }
 
         protected override double Return_The_Maximum_Value_Of_Double()
         {
-            throw new NotImplementedException();
+            return double.MaxValue;
         }
 
         protected override double Return_The_Minimum_Value_Of_Double()
         {
-            throw new NotImplementedException();
+            return double.MinValue;
         }
 
         protected override bool Return_True_If_a_Is_Not_A_Number(double a)
         {
-            throw new NotImplementedException();
+        	return double.IsNaN(a);
         }
 
         protected override bool Return_True_If_a_Is_An_Infinity(double a)
         {
-            throw new NotImplementedException();
+        	return double.IsInfinity(a);
         }
     }
 }

@@ -1,12 +1,12 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Squire.Framework
 {
-    [TestClass]
+    [TestFixture]
     public abstract class NumbersKihonBase : BaseKihon
     {
-        [TestMethod]
+        [Test]
         public void Return_The_Maximum_Value_Of_Int32_Test()
         {
             // Arrange
@@ -19,7 +19,7 @@ namespace Squire.Framework
             Assert.AreEqual(Int32.MaxValue, result);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_The_Minimum_Value_Of_Int32_Test()
         {
             // Arrange
@@ -32,7 +32,7 @@ namespace Squire.Framework
             Assert.AreEqual(int.MinValue, result);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_The_Remainder_Of_a_Divided_By_b()
         {
             // Arrange
@@ -46,7 +46,7 @@ namespace Squire.Framework
             Assert.AreEqual(a % b, remainder);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_The_Maximum_Value_Of_Double_Test()
         {
             // Arrange
@@ -59,7 +59,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.MaxValue, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_The_Minimum_Value_Of_Double_Test()
         {
             // Arrange
@@ -72,7 +72,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.MinValue, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_Not_A_Number_Test1()
         {
             // Arrange
@@ -85,7 +85,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.IsNaN(a), result);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_Not_A_Number_Test2()
         {
             // Arrange
@@ -98,7 +98,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.IsNaN(a), result);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_Not_A_Number_Test3()
         {
             // Arrange
@@ -111,7 +111,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.IsNaN(a), result);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_An_Infinity_Test1()
         {
             // Arrange
@@ -124,7 +124,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.IsInfinity(a), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_An_Infinity_Test2()
         {
             // Arrange
@@ -137,7 +137,7 @@ namespace Squire.Framework
             Assert.AreEqual(double.IsInfinity(a), actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Return_True_If_a_Is_An_Infinity_Test3()
         {
             // Arrange

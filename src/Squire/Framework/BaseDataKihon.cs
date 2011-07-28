@@ -1,14 +1,14 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Transactions;
 using System.Data.SQLite;
 using System.Text;
 using System.Data;
+using NUnit.Framework;
 
 namespace Squire.Framework
 {
 
-    [TestClass]
+    [TestFixture]
     public abstract class BaseDataKihon : BaseKihon, IDisposable
     {
         protected SQLiteConnection dbConn;

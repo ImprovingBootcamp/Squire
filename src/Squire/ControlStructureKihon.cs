@@ -1,11 +1,11 @@
 using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using Squire.Framework;
 using System.Collections.Generic;
 
 namespace Squire
 {
-    [TestClass]
+    [TestFixture]
     public class ControlStructureKihon : ControlStructuresKihonBase
     {
         /*
