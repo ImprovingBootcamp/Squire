@@ -57,7 +57,9 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\lib\Castle.Windsor.2.5.2\dotNet40\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\NUnit\framework\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\..\lib\Rhino.Mocks-3.6\Rhino.Mocks.dll</HintPath>
     </Reference>
