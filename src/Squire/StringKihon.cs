@@ -12,72 +12,72 @@ namespace Squire
     {
         protected override string Convert_To_Uppercase(string data)
         {
-        	return data.ToUpper();
+            throw new NotImplementedException();
         }
 
         protected override string Convert_To_Lowercase(string data)
         {
-        	return data.ToLower();
+            throw new NotImplementedException();
         }
 
         protected override string Combine_Parts_Of_A_Name(string firstName, string middleName, string lastName)
         {
-            return firstName + " " + middleName + " " + lastName;
+            throw new NotImplementedException();
         }
 
         protected override string Combine_Two_Strings(string a, string b)
         {
-            return a + b;
+            throw new NotImplementedException();
         }
 
         protected override int Determine_The_Length_Of_A_String(string data)
         {
-            return data.Length;
+            throw new NotImplementedException();
         }
 
         protected override string Remove_All_Leading_Whitespace(string data)
         {
-        	return data.TrimStart();
+            throw new NotImplementedException();
         }
 
         protected override string Remove_All_Trailing_Whitespace(string data)
         {
-        	return data.TrimEnd();
+            throw new NotImplementedException();
         }
 
         protected override string[] Split_A_String_Into_An_Array(string input, char divider)
         {
-        	return input.Split(divider);
+            throw new NotImplementedException();
         }
 
         protected override string Join_An_Array_Into_A_String(string[] input, string divider)
         {
-        	return string.Join(divider, input);
+            throw new NotImplementedException();
         }
 
         protected override bool Return_True_If_a_Contains_b(string a, string b)
         {
-        	return a.Contains(b);
+            throw new NotImplementedException();
         }
 
         protected override int Determine_The_Position_Of_a_In_b(string a, string b)
         {
-        	return b.IndexOf(a);
+            throw new NotImplementedException();
         }
 
         protected override bool Return_True_If_a_Starts_With_b(string a, string b)
         {
-        	return a.StartsWith(b);
+            throw new NotImplementedException();
         }
 
         protected override bool Return_True_Is_a_Ends_With_b(string a, string b)
         {
-        	return a.EndsWith(b);
+            throw new NotImplementedException();
         }
 
         protected override string Return_The_Fourth_Through_Seventh_Characters_Of_Input(string input)
         {
-        	return input.Substring(3,4);
+            throw new NotImplementedException();
         }
     }
 }
