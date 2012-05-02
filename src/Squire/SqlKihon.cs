@@ -4,7 +4,7 @@ using Squire.Framework;
 
 namespace Squire
 {
-    //[TestFixture]
+    [TestFixture]
     public class SqlKihon : SqlKihonBase
     {
         /* Given SQL Tables defined as:

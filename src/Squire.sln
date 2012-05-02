@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+# SharpDevelop 4.2.0.8774-RC
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{367740AC-F554-4B7D-89E5-13F5422A9B09}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.txt = ..\README.txt
