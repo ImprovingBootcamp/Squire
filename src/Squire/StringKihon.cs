@@ -12,7 +12,7 @@ namespace Squire
     {
         protected override string Convert_To_Uppercase(string data)
         {
-            throw new NotImplementedException();
+            return data.ToUpper();
         }
 
         protected override string Convert_To_Lowercase(string data)
