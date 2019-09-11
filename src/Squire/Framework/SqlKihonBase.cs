@@ -3,12 +3,11 @@ using System;
 using System.Data.SQLite;
 using System.Text;
 using System.Data;
-
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Squire.Framework
 {
-    [TestFixture]
+    [TestClass]
     public abstract class SqlKihonBase : BaseDataKihon
     {
         private int ExecuteScalarInt(string cmdText)
@@ -99,7 +98,7 @@ namespace Squire.Framework
             return sb.ToString();
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Select_All_Fields_And_Rows_From_Person()
         {
             // Arrange
@@ -120,7 +119,7 @@ namespace Squire.Framework
             Assert.AreEqual(3, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Select_All_Fields_From_Person_Joined_To_Address()
         {
             // Arrange
@@ -141,7 +140,7 @@ namespace Squire.Framework
             Assert.AreEqual(1, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Select_FirstName_From_Person_Where_LastName_Equals_Rayburn()
         {
             // Arrange
@@ -161,7 +160,7 @@ namespace Squire.Framework
             Assert.AreEqual(2, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Select_All_Fields_From_Person_Left_Outer_Joined_To_Address()
         {
             // Arrange
@@ -181,7 +180,7 @@ namespace Squire.Framework
             Assert.AreEqual(3, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Insert_PersonId_4_Named_Mike_Johnson_Age_5_To_Person()
         {
             // Arrange
@@ -204,7 +203,7 @@ namespace Squire.Framework
             Assert.AreEqual(1, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Actual_Update_All_LastNames_Rayburn_To_Johnson_In_Person()
         {
             // Arrange

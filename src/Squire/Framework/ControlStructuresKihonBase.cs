@@ -1,8 +1,8 @@
 using System;
 
-using NUnit.Framework;
-using Rhino.Mocks;
+using Moq;
 using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Squire.Framework
 {
@@ -12,97 +12,111 @@ namespace Squire.Framework
         bool IsValid { get; }
     }
 
-    [TestFixture]
+    [TestClass]
     public abstract class ControlStructuresKihonBase : BaseKihon
     {
-        [Test]
+        [TestMethod]
         public void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b_V1()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
-            var b = MockRepository.GenerateMock<ITarget>();
+            var a = new Mock<ITarget>();
+            var b = new Mock<ITarget>(MockBehavior.Strict);
             bool val = true;
+            a.Setup(e => e.Hit()).Verifiable();
 
             // Act
-            Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(val, a, b);
+            Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(val, a.Object, b.Object);
 
             // Assert
-            a.AssertWasCalled(t => t.Hit());
-            b.AssertWasNotCalled(t => t.Hit());
+            a.Verify();
+            b.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b_V2()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
-            var b = MockRepository.GenerateMock<ITarget>();
+            var a = new Mock<ITarget>(MockBehavior.Strict);
+            var b = new Mock<ITarget>();
             bool val = false;
+            b.Setup(e => e.Hit()).Verifiable();
 
             // Act
-            Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(val, a, b);
+            Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(val, a.Object, b.Object);
 
             // Assert
-            a.AssertWasNotCalled(t => t.Hit());
-            b.AssertWasCalled(t => t.Hit());
+            a.Verify();
+            b.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void Call_Hit_On_a_Once_For_Each_Member_Of_list()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
+            var a = new Mock<ITarget>();
             var list = new List<string>() { "a", "b", "c", "d" };
+            a.Setup(e => e.Hit()).Verifiable();
+            a.Setup(e => e.Hit()).Verifiable();
+            a.Setup(e => e.Hit()).Verifiable();
+            a.Setup(e => e.Hit()).Verifiable();
 
             // Act
-            Call_Hit_On_a_Once_For_Each_Member_Of_list(a, list);
+            Call_Hit_On_a_Once_For_Each_Member_Of_list(a.Object, list);
 
             // Assert
-            a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(4));
+            a.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void Call_Hit_On_a_While_a_IsValid_Is_True()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
-            a.Stub(m => m.IsValid).Return(true).Repeat.Times(4);
-            a.Stub(m => m.IsValid).Return(false).Repeat.Times(1);
+            var a = new Mock<ITarget>();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(false).Verifiable();
 
             // Act
-            Call_Hit_On_a_While_a_IsValid_Is_True(a);
-            
+            Call_Hit_On_a_While_a_IsValid_Is_True(a.Object);
+
             // Assert
-            a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(4));
+            a.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void n_Times_Call_Hit_On_a()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
+            var a = new Mock<ITarget>();
             var n = 132;
+            var count = 0;
+            a.Setup(e => e.Hit()).Callback(() => count++);
 
             // Act
-            n_Times_Call_Hit_On_a(n, a);
+            n_Times_Call_Hit_On_a(n, a.Object);
 
             // Assert
-            a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(n));
+            Assert.AreEqual(n, count);
         }
 
-        [Test]
+        [TestMethod]
         public void Call_Hit_On_a_Once_And_Continue_Until_IsValid_Is_False()
         {
             // Arrange
-            var a = MockRepository.GenerateMock<ITarget>();
-            a.Stub(m => m.IsValid).Return(true).Repeat.Times(4);
-            a.Stub(m => m.IsValid).Return(false).Repeat.Times(1);
+            var a = new Mock<ITarget>();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(true).Verifiable();
+            a.Setup(m => m.IsValid).Returns(false).Verifiable();
 
             // Act
-            Call_Hit_On_a_Once_And_Loop_Until_IsValid_Is_False(a);
+            Call_Hit_On_a_Once_And_Loop_Until_IsValid_Is_False(a.Object);
 
             // Assert
-            a.AssertWasCalled(m => m.Hit(), mo => mo.Repeat.Times(5));
+            a.Verify();
         }
 
         protected abstract void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(bool val, ITarget a, ITarget b);

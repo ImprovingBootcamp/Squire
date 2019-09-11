@@ -1,39 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{367740AC-F554-4B7D-89E5-13F5422A9B09}"
-	ProjectSection(SolutionItems) = preProject
-		..\README.txt = ..\README.txt
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire", "Squire\Squire.csproj", "{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E140EBEB-8567-48B3-B9A5-20261120ED6C}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squire", "Squire\Squire.csproj", "{E7BB217B-6F1A-4DAF-9E74-5892A25D0CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Debug|x86.ActiveCfg = Debug|x86
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Debug|x86.Build.0 = Debug|x86
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Release|x86.ActiveCfg = Release|x86
-		{912DC9CB-8F72-4EE2-99F9-64F8592C85CE}.Release|x86.Build.0 = Release|x86
+		{E7BB217B-6F1A-4DAF-9E74-5892A25D0CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BB217B-6F1A-4DAF-9E74-5892A25D0CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BB217B-6F1A-4DAF-9E74-5892A25D0CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BB217B-6F1A-4DAF-9E74-5892A25D0CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F667BE2-29D7-4EC0-8E7E-919A0C92918B}
 	EndGlobalSection
 	GlobalSection(SpecExplorer.ActivityCompletionStatus) = preSolution
 		SpecExplorer.ActivityCompletionStatus = TestExisting: ;ModelFromScratch:

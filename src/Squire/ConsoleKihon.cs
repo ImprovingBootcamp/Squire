@@ -1,5 +1,5 @@
 using System;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Squire.Framework;
 using Squire.Framework.Abstractions;
 
@@ -13,7 +13,7 @@ namespace Squire
      * methods and properties as System.Console, so anything you can
      * do to one, you can do to the other.
      */
-    [TestFixture]
+    [TestClass]
     public class ConsoleKihon : ConsoleKihonBase
     {
         protected override void Write_FooBar_To_The_Console(IConsoleWrapper console)

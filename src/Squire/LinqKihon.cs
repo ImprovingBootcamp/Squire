@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Squire.Framework;
 
 namespace Squire
 {
-    //[TestFixture]
+    [TestClass]
     public class LinqKihon : LinqKihonBase
     {
         protected override IEnumerable<int> Select_the_Something_property_from_list(List<Product> list)

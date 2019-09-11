@@ -1,70 +1,73 @@
 using System;
 
-using NUnit.Framework;
 using Squire.Framework.Abstractions;
-using Rhino.Mocks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace Squire.Framework
 {
-    [TestFixture]
+    [TestClass]
     public abstract class ConsoleKihonBase : BaseKihon
     {
-        private IConsoleWrapper console;
+        private Mock<IConsoleWrapper> mockConsole;
 
         protected override void BeforeEachTest()
         {
             base.BeforeEachTest();
-            console = MockRepository.GenerateMock<IConsoleWrapper>();
+            mockConsole = new Mock<IConsoleWrapper>();
         }
-        [Test]
+        [TestMethod]
         public void Write_FooBar_To_The_Console()
         {
             // Arrange
-            
+            mockConsole.Setup(e => e.Write("FooBar"))
+                .Verifiable("Did not call Write correctly");
 
             // Act
-            Write_FooBar_To_The_Console(console);
+            Write_FooBar_To_The_Console(mockConsole.Object);
 
             // Assert
-            console.AssertWasCalled(c => c.Write("FooBar"));
+            mockConsole.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void WriteLine_FooBar_To_The_Console()
         {
             // Arrange
-            
+            mockConsole.Setup(e => e.WriteLine("FooBar"))
+                .Verifiable("Did not call WriteLine correctly");
 
             // Act
-            WriteLine_FooBar_To_The_Console(console);
+            WriteLine_FooBar_To_The_Console(mockConsole.Object);
 
             // Assert
-            console.AssertWasCalled(c => c.WriteLine("FooBar"));
+            mockConsole.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void Write_Foo_In_Blue_To_The_Console()
         {
             // Arrange
-            
-
+            mockConsole.SetupSet(e => e.ForegroundColor = ConsoleColor.Blue)
+                .Verifiable("Did not set foreground color correctly.");
+            mockConsole.Setup(e => e.Write("Foo"))
+                .Verifiable("Did not call Write correctly");
             // Act
-            Write_Foo_In_Blue_To_The_Console(console);
+            Write_Foo_In_Blue_To_The_Console(mockConsole.Object);
 
             // Assert
-            console.AssertWasCalled(c => c.ForegroundColor = ConsoleColor.Blue);
-            console.AssertWasCalled(c => c.Write("Foo"));
+            mockConsole.Verify();
         }
 
-        [Test]
+        [TestMethod]
         public void Read_Line_From_Console_And_Return_Value()
         {
             // Arrange
             string expected = "This is a test";
-            console.Stub(c => c.ReadLine()).Return(expected);
+            mockConsole.Setup(c => c.ReadLine()).Returns(expected);
 
             // Act
-            var actual = Read_Line_From_Console_And_Return_Value(console);
+            var actual = Read_Line_From_Console_And_Return_Value(mockConsole.Object);
 
             // Assert
             Assert.AreEqual(expected, actual);

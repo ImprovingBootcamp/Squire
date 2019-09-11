@@ -3,12 +3,12 @@ using System.Transactions;
 using System.Data.SQLite;
 using System.Text;
 using System.Data;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Squire.Framework
 {
 
-    [TestFixture]
+    [TestClass]
     public abstract class BaseDataKihon : BaseKihon, IDisposable
     {
         protected SQLiteConnection dbConn;
