@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Solutions - Linq Kihon
+title: Linq Kihon
 ---
-<pre class="brush: csharp">
+```
          protected override IEnumerable&lt;int&gt; Select_the_Something_property_from_list(List&lt;Product&gt; list)
         {
             return list.Select(x =&gt; x.Something);
@@ -22,4 +22,4 @@ title: Solutions - Linq Kihon
         {
             return list.Where(x =&gt; x.Something == 2);
         }
-</pre>
+```

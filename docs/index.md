@@ -2,7 +2,8 @@
 title: Squire
 ---
 
-## Solutions 1
+
+## Solutions
 <ul>
   {% for post in site.posts %}
     <li>
@@ -10,3 +11,4 @@ title: Squire
     </li>
   {% endfor %}
 </ul>
+ 
