@@ -2,7 +2,7 @@
 layout: default
 title: Console Kihon
 ---
-```
+```cs
 protected override void Write_FooBar_To_The_Console(IConsoleWrapper console)
 {
     console.Write("FooBar");

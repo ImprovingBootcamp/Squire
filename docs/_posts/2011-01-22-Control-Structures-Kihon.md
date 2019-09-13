@@ -2,7 +2,7 @@
 layout: default
 title: Control Structures Kihon
 ---
-```
+```cs
 protected override void Call_Hit_On_a_If_val_Is_True_Else_Call_Hit_On_b(bool val, ITarget a, ITarget b)
 {
     if (val) a.Hit();

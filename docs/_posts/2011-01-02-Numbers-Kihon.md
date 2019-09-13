@@ -2,7 +2,7 @@
 layout: default
 title: Numbers Kihon
 ---
-```
+```cs
 protected override int Return_The_Maximum_Value_Of_Int32()
 {
     return int.MaxValue;

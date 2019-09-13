@@ -2,7 +2,7 @@
 layout: default
 title: String Kihon
 ---
-```
+```cs
 protected override string Convert_To_Uppercase(string data)
 {
     return data.ToUpper();
