@@ -58,14 +58,12 @@ namespace Squire.Framework
                                new Product(){Something = 1}
                            };
 
-
-
             //act
             IEnumerable<Product> item = Order_the_list_by_the_something_property(list);
 
             //assert
-            Assert.AreEqual(list[0], item.FirstOrDefault());
-            Assert.AreEqual(list[1], item.LastOrDefault());
+            Assert.AreEqual(list[1], item.FirstOrDefault());
+            Assert.AreEqual(list[0], item.LastOrDefault());
         }
 
 
@@ -73,15 +71,12 @@ namespace Squire.Framework
         public void Order_the_list_by_the_something_property_descending_test()
         {
             //arrange
-            var product = new Product() { Something = 2 };
+            var product = new Product() { Something = 1 };
             var list = new List<Product>()
                            {
                                product,
-                               new Product(){Something = 1}
+                               new Product(){Something = 2}
                            };
-
-
-
             //act
             IEnumerable<Product> item = Order_the_list_by_the_something_property_descending(list);
 
